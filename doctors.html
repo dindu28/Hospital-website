@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctors Portal | City Hospital</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>City Hospital</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="patients.html">Patients</a></li>
+          <li><a href="doctors.html" class="active">Doctors</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="doctors-section">
+      <h2>Our Doctors</h2>
+      <div class="doctors-cards" id="doctorsList"></div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>City Hospital</h3>
+          <p>123 Main Street, Lagos, Nigeria</p>
+          <p>Phone: 08144188155</p>
+          <p>Email: info@cityhospital.com</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="patients.html">Patients</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        &copy; 2026 City Hospital | All Rights Reserved
+      </p>
+    </footer>
+
+    <script>
+      const doctors = [
+        {
+          name: "Dr. Smith",
+          specialty: "Cardiology",
+          img: "https://randomuser.me/api/portraits/men/32.jpg",
+        },
+        {
+          name: "Dr. Johnson",
+          specialty: "Neurology",
+          img: "https://randomuser.me/api/portraits/women/45.jpg",
+        },
+        {
+          name: "Dr. Williams",
+          specialty: "Pediatrics",
+          img: "https://randomuser.me/api/portraits/men/55.jpg",
+        },
+        {
+          name: "Dr. Brown",
+          specialty: "Orthopedics",
+          img: "https://randomuser.me/api/portraits/women/33.jpg",
+        },
+      ];
+
+      const doctorsList = document.getElementById("doctorsList");
+      doctors.forEach((doc) => {
+        const div = document.createElement("div");
+        div.classList.add("doctor-card");
+        div.innerHTML = `<img src="${doc.img}" alt="${doc.name}">
+                       <h3>${doc.name}</h3>
+                       <p>${doc.specialty}</p>`;
+        doctorsList.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
